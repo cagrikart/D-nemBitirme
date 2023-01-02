@@ -1,0 +1,26 @@
+﻿@model DönemBitirme.Models.Category
+
+@{
+    ViewBag.Title = "ViewCategory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ViewCategory</h2>
+
+
+
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.CategoryId)
+        @Html.TextBoxFor(k => k.CategoryId, new { @class = "form-control" })
+        <br />
+        <label>Category Name  </label>
+        @Html.TextBoxFor(k => k.CategoryName, new { @class = "form-control" })
+        <div>
+            <button class="btn btn-warning"> GÜNCELLE </button>
+        </div>
+    </div>
+}
+

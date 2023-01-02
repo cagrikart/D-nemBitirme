@@ -1,0 +1,19 @@
+﻿@model DönemBitirme.Models.Employee
+
+@{
+    ViewBag.Title = "CreateEmployee";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Create Employee</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <label> Employee Name</label>
+        @Html.TextBoxFor(e => e.EmployeeName, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1"> Adding </button>
+    </div>
+</form>

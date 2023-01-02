@@ -1,0 +1,23 @@
+﻿@model DönemBitirme.Models.AboutU
+
+@{
+    ViewBag.Title = "ViewAboutUs";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ViewAboutUs</h2>
+
+
+@using (Html.BeginForm("UpdateAboutUs", "AboutUs", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.AboutUsId)
+        @Html.TextBoxFor(k => k.AboutUsId, new { @class = "form-control" })
+        <br />
+        <label> Explanation  </label>
+        @Html.TextBoxFor(k => k.Explanation, new { @class = "form-control" })
+        <div>
+            <button class="btn btn-warning"> GÜNCELLE </button>
+        </div>
+    </div>
+}

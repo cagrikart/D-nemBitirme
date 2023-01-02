@@ -1,0 +1,28 @@
+﻿@model DönemBitirme.Models.Publisher
+
+@{
+    ViewBag.Title = "ViewPublisher";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>View Publisher</h2>
+
+
+
+
+
+
+
+@using (Html.BeginForm("UpdatePublisher", "Publisher", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.PublisherId)
+        @Html.TextBoxFor(k => k.PublisherId, new { @class = "form-control" })
+        <br />
+        <label>Publisher Name  </label>
+        @Html.TextBoxFor(k => k.PublisherName, new { @class = "form-control" })
+        <div>
+            <button class="btn btn-warning"> GÜNCELLE </button>
+        </div>
+    </div>
+}

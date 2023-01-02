@@ -1,0 +1,27 @@
+﻿@model DönemBitirme.Models.Member
+
+@{
+    ViewBag.Title = "CreateMember";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Create Member</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <label>  MemberName</label>
+        @Html.TextBoxFor(a => a.MemberName, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>  MemberMail </label>
+        @Html.TextBoxFor(a => a.MemberMail, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>  MemberPassword </label>
+        @Html.TextBoxFor(a => a.MemberPassword, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1"> Adding </button>
+    </div>
+</form>

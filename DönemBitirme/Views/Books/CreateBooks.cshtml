@@ -1,0 +1,38 @@
+﻿@model DönemBitirme.Models.Book
+
+@{
+    ViewBag.Title = "CreateBooks";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>CreateBooks</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <label> Books Name</label>
+        @Html.TextBoxFor(a => a.BookName, new { @class = "form-control" })
+    </div>
+    <div>
+        <label> Category </label>
+        @Html.TextBoxFor(k => k.Category,
+        new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label> Author Name</label>
+        @Html.TextBoxFor(k => k.Author,
+     new { @class = "form-control" })
+    </div>
+    <div>
+        <label> Book Year </label>
+        @Html.TextBoxFor(a => a.BookYear, new { @class = "form-control" })
+    </div>
+    <div>
+        <label> Publisher </label>
+        @Html.TextBoxFor(k => k.Publisher,
+    new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1"> Adding </button>
+    </div>
+</form>

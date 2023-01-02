@@ -1,0 +1,22 @@
+﻿@model DönemBitirme.Models.Author
+
+@{
+    ViewBag.Title = "ViewAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ViewAuthor</h2>
+
+@using (Html.BeginForm("UpdateAuthor", "Author", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.AuthorId)
+        @Html.TextBoxFor(k => k.AuthorId, new { @class = "form-control" })
+        <br />
+        <label>Category Name  </label>
+        @Html.TextBoxFor(k => k.AuthorName, new { @class = "form-control" })
+        <div>
+            <button class="btn btn-warning"> GÜNCELLE </button>
+        </div>
+    </div>
+}

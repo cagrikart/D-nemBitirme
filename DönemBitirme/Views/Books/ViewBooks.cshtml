@@ -1,0 +1,48 @@
+﻿@model DönemBitirme.Models.Book
+
+@{
+    ViewBag.Title = "ViewBooks";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ViewBooks</h2>
+
+
+@using (Html.BeginForm("UpdateBooks", "Books", FormMethod.Post))
+{
+   <div>
+       <label> BookId  </label>
+       @*@Html.DropDownListFor(k => k.Category, (List<SelectListItem>)ViewBag.category,
+        new { @class = "form-control" })*@
+       @Html.TextBoxFor(a => a.BookId, new { @class = "form-control" })
+       <div>
+           <label> Books Name</label>
+           @Html.TextBoxFor(a => a.BookName, new { @class = "form-control" })
+       </div>
+       <label> Category </label>
+       @*@Html.DropDownListFor(k => k.Category, (List<SelectListItem>)ViewBag.category,
+        new { @class = "form-control" })*@
+       @Html.TextBoxFor(a => a.Category, new { @class = "form-control" })
+   </div>
+   
+    <div>
+        <label> Author Name</label>
+        @Html.DropDownListFor(k => k.Author, (List<SelectListItem>)ViewBag.author,
+     new { @class = "form-control" })
+    </div>
+    <div>
+        <label> Book Year </label>
+        @Html.TextBoxFor(a => a.BookYear, new { @class = "form-control" })
+    </div>
+    <div>
+        <label> Publisher </label>
+        @Html.TextBoxFor(a => a.Publisher, new { @class = "form-control" })
+
+        @*@Html.DropDownListFor(k => k.Publisher, (List<SelectListItem>)ViewBag.publisher,
+        new { @class = "form-control" })*@
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1"> Adding </button>
+    </div>
+}
+

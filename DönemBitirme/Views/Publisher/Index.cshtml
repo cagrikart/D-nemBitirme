@@ -1,0 +1,38 @@
+﻿@using DönemBitirme.Models
+@model List<GetPublisher_Result>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2> Publisher </h2>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Publisher Name</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.PublisherName</td>
+                <td>
+                    <a href="/Publisher/DeletePublisher/@item.PublisherId" class="btn btn-danger">Delete</a>
+                    <a href="/Publisher/ViewPublisher/@item.PublisherId" class="btn btn-success">GÜNCELLE</a>
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Publisher/CreatePublisher" class="btn btn-success"> Add </a>

@@ -1,0 +1,43 @@
+﻿@using DönemBitirme.Models
+@model List<GetMember_Result>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2>Member</h2>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Member Name</th>
+            <th scope="col">Member Mail</th>
+            <th scope="col">Member Password</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.MemberName</td>
+                <td>@item.MemberMail</td>
+                <td>@item.MemberPassword</td>
+                <td>
+                    <a href="/Member/DeleteMember/@item.MemberId" class="btn btn-danger">Delete</a>
+                    <a href="/Member/ViewMember/@item.MemberId" class="btn btn-success">GÜNCELLE</a>
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Member/CreateMember" class="btn btn-success"> Add </a>
+

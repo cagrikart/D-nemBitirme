@@ -1,0 +1,21 @@
+﻿@model DönemBitirme.Models.AboutU
+
+@{
+    ViewBag.Title = "CreateAboutUs";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>CreateAboutUs</h2>
+>
+
+
+<form class="form-group" method="post">
+    <div>
+        <label> Explanation </label>
+        @Html.TextBoxFor(a => a.Explanation, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1"> Adding </button>
+    </div>
+</form>

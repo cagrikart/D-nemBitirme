@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ViewMember";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>View Member</h2>
+
+@model DönemBitirme.Models.Member
+
+
+
+@using (Html.BeginForm("UpdateMember", "Member", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.MemberId)
+        @Html.TextBoxFor(k => k.MemberId, new { @class = "form-control" })
+        <br />
+        <label>Member Name  </label>
+        @Html.TextBoxFor(k => k.MemberName, new { @class = "form-control" })
+        <label>Member Mail  </label>
+        @Html.TextBoxFor(k => k.MemberMail, new { @class = "form-control" })
+        <label>Member Password  </label>
+        @Html.TextBoxFor(k => k.MemberPassword, new { @class = "form-control" })
+        <div>
+            <button class="btn btn-warning"> GÜNCELLE </button>
+        </div>
+    </div>
+}

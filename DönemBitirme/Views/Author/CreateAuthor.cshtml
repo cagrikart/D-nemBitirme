@@ -1,0 +1,19 @@
+﻿@model DönemBitirme.Models.Author
+@{
+    ViewBag.Title = "CreateAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>CreateAuthor</h2>
+
+
+<form class="form-group" method="post">
+    <div>
+        <label> Author Name</label>
+        @Html.TextBoxFor(a => a.AuthorName, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1"> Adding </button>
+    </div>
+</form>

@@ -1,0 +1,35 @@
+﻿@using DönemBitirme.Models
+@model List<GetAboutUs_Result>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>About us </h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Explanation</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.Explanation</td>
+                <td>
+                    <a href="/AboutUs/DeleteAboutUs/@item.AboutUsId" class="btn btn-danger">Delete</a>
+                    <a href="/AboutUs/ViewAboutUs/@item.AboutUsId" class="btn btn-success"> Update</a>
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/AboutUs/CreateAboutUs" class="btn btn-success"> Add </a>

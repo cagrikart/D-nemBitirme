@@ -1,0 +1,43 @@
+﻿@using DönemBitirme.Models
+@model List<GETBOOKS_Result>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Author Name</th>
+            <th scope="col">Publisher Name</th>
+            <th scope="col">BookYear </th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.BookName</td>
+                <td>@item.CategoryName</td>
+                <td>@item.AuthorName</td>
+                <td>@item.PublisherName</td>
+                <td>@item.BookYear</td>
+
+                <td>
+                    <a href="/Books/DeleteBooks/@item.BookId" class="btn btn-danger">Delete</a>
+                    <a href="/Books/ViewBooks/@item.BookId" class="btn btn-success"> Update</a>
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Books/CreateBooks" class="btn btn-success">Add </a>

@@ -1,0 +1,36 @@
+﻿@using DönemBitirme.Models
+@model List<GetCategory_Result>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2> Category </h2>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Category Name</th>
+            <th scope="col">Details </th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.CategoryName</td>
+                <td>
+                    <a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Delete</a>
+                    <a href="/Category/ViewCategory/@item.CategoryId" class="btn btn-success">GÜNCELLE</a>                
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Category/CreateCategory" class="btn btn-success"> Add  </a>
